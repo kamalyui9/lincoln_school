@@ -1,6 +1,31 @@
 # Odoo will provide the Endpoint using Rest API
 
 ## 1. Sync Student/Parent Data from PowerSchool to Odoo
+```mermaid
+sequenceDiagram
+    participant Student as Student
+    participant Admin as Admin
+    participant PowerSchool as PowerSchool
+    participant Odoo as Odoo 
+
+    Student->>Admin: Apply for Enrollment
+    Admin->>PowerSchool: Create/Update Student/Parent Record
+    PowerSchool->>PowerSchool: Mark Record as Pending Sync
+    PowerSchool->>PowerSchool: Prepare Student/Parent Data for Sync
+    Note left of Odoo: Odoo exposes REST API
+
+    PowerSchool->>Odoo: Call Odoo API (POST /api/parents & /api/students)
+    Odoo->>Odoo: Extract & Process Student/Parent Data
+    Odoo->>Odoo: Map Data to Create Contact Record
+    Odoo-->>PowerSchool: API Response (Success/Error)
+
+    alt Success
+        PowerSchool->>PowerSchool: Mark Record as Synced
+    else Error
+        PowerSchool->>PowerSchool: Log Sync Failure
+        PowerSchool-->>Admin: Notify Sync Failure
+    end
+```
 
 ## 2. Sync Employee/Teacher Data from Odoo to PowerSchool
 ```mermaid
