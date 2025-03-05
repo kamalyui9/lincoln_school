@@ -58,3 +58,30 @@ sequenceDiagram
         Odoo-->>Admin: Notify Sync Failure
     end
 ```
+
+3. Sync Transactional Data (Enrollment & Billing) from PowerSchool to Odoo
+```mermaid
+sequenceDiagram
+    participant Student as Student
+    participant Admin as Admin
+    participant PowerSchool as PowerSchool
+    participant Odoo as Odoo 
+
+    Student->>Admin: Enroll in Course
+    Admin->>PowerSchool: Register Student & Generate Invoice
+    PowerSchool->>PowerSchool: Mark Record as Pending Sync
+    PowerSchool->>PowerSchool: Prepare Enrollment/Billing Data for Sync
+    Note left of Odoo: Odoo exposes REST API
+
+    PowerSchool->>Odoo: Call Odoo API (POST /api/enrollments & /api/billings)
+    Odoo->>Odoo: Extract & Process Enrollment/Billing Data
+    Odoo->>Odoo: Map Data to Create Enrollment/Billing Record
+    Odoo-->>PowerSchool: API Response (Success/Error)
+
+    alt Success
+        PowerSchool->>PowerSchool: Mark Record as Synced
+    else Error
+        PowerSchool->>PowerSchool: Log Sync Failure
+        PowerSchool-->>Admin: Notify Sync Failure
+    end
+```
