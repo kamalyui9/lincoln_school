@@ -1,4 +1,4 @@
-# lincoln_school
+# PowerSchool Provides Rest API
 
 # 1. Sync Student/Parent Data from PowerSchool to Odoo
 ```mermaid
