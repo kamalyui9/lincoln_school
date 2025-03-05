@@ -36,7 +36,7 @@ sequenceDiagram
 
     Admin->>Odoo: Create/Update Employee Record
     Odoo->>Odoo: Mark Record as Pending Sync
-    Odoo->>Odoo: Prepare Employee Data ready for Sync
+    Odoo->>Odoo: Prepare Employee Data Ready for Sync
     Note right of Odoo: Odoo exposes REST API
 
     PowerSchool->>Odoo: Call Odoo API (GET /api/employees)
