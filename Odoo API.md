@@ -11,7 +11,7 @@ sequenceDiagram
     Student->>Admin: Apply for Enrollment
     Admin->>PowerSchool: Create/Update Student/Parent Record
     PowerSchool->>PowerSchool: Mark Record as Pending Sync
-    PowerSchool->>PowerSchool: Prepare Student/Parent Data for Sync
+    PowerSchool->>PowerSchool: Prepare Student/Parent Data ready for Sync
     Note left of Odoo: Odoo exposes REST API
 
     PowerSchool->>Odoo: Call Odoo API (POST /api/parents & /api/students)
@@ -36,7 +36,7 @@ sequenceDiagram
 
     Admin->>Odoo: Create/Update Employee Record
     Odoo->>Odoo: Mark Record as Pending Sync
-    Odoo->>Odoo: Prepare Employee Data for Sync
+    Odoo->>Odoo: Prepare Employee Data ready for Sync
     Note right of Odoo: Odoo exposes REST API
 
     PowerSchool->>Odoo: Call Odoo API (GET /api/employees)
@@ -70,7 +70,7 @@ sequenceDiagram
     Student->>Admin: Enroll in Course
     Admin->>PowerSchool: Register Student & Generate Invoice
     PowerSchool->>PowerSchool: Mark Record as Pending Sync
-    PowerSchool->>PowerSchool: Prepare Enrollment/Billing Data for Sync
+    PowerSchool->>PowerSchool: Prepare Enrollment/Billing Data ready for Sync
     Note left of Odoo: Odoo exposes REST API
 
     PowerSchool->>Odoo: Call Odoo API (POST /api/enrollments & /api/billings)
