@@ -19,7 +19,7 @@ sequenceDiagram
     PowerSchool->>PowerSchool: Extract & Process Employee Data
     PowerSchool->>PowerSchool: Map Data to Create Teacher Record
     Note right of Odoo: Odoo exposes REST API
-    PowerSchool->>Odoo: Call Odoo API Response (Success/Error)
+    PowerSchool->>Odoo: Call Odoo API Response (POST /api/status)
 
     alt Success
         Odoo->>Odoo: Mark Record as Synced
@@ -28,5 +28,4 @@ sequenceDiagram
         Odoo->>Odoo: Log Sync Error
         Odoo-->>Admin: Notify Sync Failure
     end
-
 ```
