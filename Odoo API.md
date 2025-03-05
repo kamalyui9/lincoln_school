@@ -28,7 +28,6 @@ sequenceDiagram
 
     alt Success
         Odoo->>Odoo: Mark Record as Synced
-        Odoo-->>Admin: Notify Sync Success
     else Error
         Odoo->>Odoo: Log Sync Error
         Odoo-->>Admin: Notify Sync Failure
