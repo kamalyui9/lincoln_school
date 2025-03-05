@@ -1,6 +1,8 @@
 # Odoo will provide the Endpoint using Rest API
 
-## Sync Employee/Teacher Data from Odoo to PowerSchool
+## 1. Sync Student/Parent Data from PowerSchool to Odoo
+
+## 2. Sync Employee/Teacher Data from Odoo to PowerSchool
 ```mermaid
 sequenceDiagram
     participant Admin as HR (Odoo)
