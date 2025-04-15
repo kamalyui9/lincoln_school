@@ -37,7 +37,7 @@ sequenceDiagram
 
 ```
 
-# 3. Sync Transactional Data (Enrollment & Billing) from PowerSchool to Odoo
+# 3. Sync Transactional Data (Enrollment Fees) from PowerSchool to Odoo
 
 ```mermaid
 sequenceDiagram
