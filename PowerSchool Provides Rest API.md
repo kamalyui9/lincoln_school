@@ -28,6 +28,7 @@ sequenceDiagram
 
     HR->>Odoo: Create/Update/Delete Employee (Teacher)
     Odoo->>Odoo: Prepare Employee Data for Sync
+    PowerSchool->>PowerSchool: Run Scheduler (Every 5 Min)
     PowerSchool->>Odoo: Call Odoo API to GET Teacher Data
     Odoo-->>PowerSchool: Send Teacher Data (JSON Response)
     PowerSchool->>PowerSchool: Extract & Process Teacher Data
