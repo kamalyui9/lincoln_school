@@ -54,6 +54,6 @@ sequenceDiagram
     Odoo->>PowerSchool: Call API to Get Enrollment & Billing Data
     PowerSchool-->>Odoo: Send Enrollment & Billing Data (JSON)
     Odoo->>Odoo: Extract Enrollment & Billing Data
-    Odoo->>Accounting: Map Data to Create Invoice in Odoo
+    Odoo->>Accounting: Map Data to Create Enrollment Data in Odoo
     Odoo-->>Admin: Transaction Successfully Synced
 ```
