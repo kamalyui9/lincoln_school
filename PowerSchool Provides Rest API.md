@@ -48,12 +48,12 @@ sequenceDiagram
     participant Accounting as Accounting (Odoo)
 
     Student->>Admin: Enroll in Course
-    Admin->>PowerSchool: Register Student & Generate Invoice
-    PowerSchool->>PowerSchool: Prepare Enrollment & Billing Data for Sync
+    Admin->>PowerSchool: Student Registration process
+    PowerSchool->>PowerSchool: Prepare Enrollment Fees Data for Sync
     Odoo->>Odoo: Run Scheduler (Every 5 Min)
-    Odoo->>PowerSchool: Call API to Get Enrollment & Billing Data
-    PowerSchool-->>Odoo: Send Enrollment & Billing Data (JSON)
-    Odoo->>Odoo: Extract Enrollment & Billing Data
+    Odoo->>PowerSchool: Call API to Get Enrollment Fees Data
+    PowerSchool-->>Odoo: Send Enrollment Fees Data (JSON)
+    Odoo->>Odoo: Extract Enrollment Fees Data
     Odoo->>Accounting: Map Data to Create Enrollment Data in Odoo
     Odoo-->>Admin: Transaction Successfully Synced
 ```
