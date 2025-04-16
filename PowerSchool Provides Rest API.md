@@ -9,14 +9,14 @@ sequenceDiagram
     participant Odoo as Odoo
 
     Student->>Admin: Apply for Enrollment
-    Admin->>PowerSchool: Create Student Record
-    PowerSchool->>PowerSchool: Prepare Student Data for Sync
+    Admin->>PowerSchool: Create Student/Parent Data
+    PowerSchool->>PowerSchool: Prepare Student/Parent Data for Sync
     Odoo->>Odoo: Run Scheduler (Every 5 Min)
-    Odoo->>PowerSchool: Call API to Get Student Data
-    PowerSchool-->>Odoo: Send Student Data (JSON)
-    Odoo->>Odoo: Extract Student Data
-    Odoo->>Odoo: Map Data to Create Contact in Odoo
-    Odoo-->>Admin: Student Data Successfully Synced
+    Odoo->>PowerSchool: Call API to Get Student/Parent Data
+    PowerSchool-->>Odoo: Send Student/Parent Data (JSON)
+    Odoo->>Odoo: Extract Student/Parent Data
+    Odoo->>Odoo: Map Data to Create/Update Contact in Odoo
+    Odoo-->>Admin: Student/Data Data Successfully Synced
 ```
 
 # 2. Sync Employee/Teacher Data from Odoo to PowerSchool
