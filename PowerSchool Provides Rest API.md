@@ -32,7 +32,7 @@ sequenceDiagram
     PowerSchool->>Odoo: Call Odoo API to GET Employee/Teacher Data
     Odoo-->>PowerSchool: Send Employee/Teacher Data (JSON Response)
     PowerSchool->>PowerSchool: Extract & Process Employee/Teacher Data
-    PowerSchool->>PowerSchool: Map Data to Create/Update Employee/Teacher Record
+    PowerSchool->>PowerSchool: Map Data to Create/Update Employee Record
     PowerSchool-->>Odoo: Sync Confirmation
 
 ```
@@ -54,6 +54,6 @@ sequenceDiagram
     Odoo->>PowerSchool: Call API to Get Enrollment Fees Data
     PowerSchool-->>Odoo: Send Enrollment Fees Data (JSON)
     Odoo->>Odoo: Extract Enrollment Fees Data
-    Odoo->>Accounting: Map Data to Create Enrollment Data in Odoo
+    Odoo->>Accounting: Map Data to Create/Update Enrollment in Odoo
     Odoo-->>Admin: Transaction Successfully Synced
 ```
