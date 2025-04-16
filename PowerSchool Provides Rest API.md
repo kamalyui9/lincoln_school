@@ -27,12 +27,12 @@ sequenceDiagram
     participant PowerSchool as PowerSchool
 
     HR->>Odoo: Create/Update/Delete Employee (Teacher)
-    Odoo->>Odoo: Prepare Employee Data for Sync
+    Odoo->>Odoo: Prepare Employee/Teacher Data for Sync
     PowerSchool->>PowerSchool: Run Scheduler (Every 5 Min)
-    PowerSchool->>Odoo: Call Odoo API to GET Teacher Data
-    Odoo-->>PowerSchool: Send Teacher Data (JSON Response)
-    PowerSchool->>PowerSchool: Extract & Process Teacher Data
-    PowerSchool->>PowerSchool: Map Data to Create Teacher Record
+    PowerSchool->>Odoo: Call Odoo API to GET Employee/Teacher Data
+    Odoo-->>PowerSchool: Send Employee/Teacher Data (JSON Response)
+    PowerSchool->>PowerSchool: Extract & Process Employee/Teacher Data
+    PowerSchool->>PowerSchool: Map Data to Create/Update Employee/Teacher Record
     PowerSchool-->>Odoo: Sync Confirmation
 
 ```
