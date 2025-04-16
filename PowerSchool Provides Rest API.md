@@ -11,7 +11,7 @@ sequenceDiagram
     Student->>Admin: Apply for Enrollment
     Admin->>PowerSchool: Create Student/Parent Data
     PowerSchool->>PowerSchool: Prepare Student/Parent Data for Sync
-    Odoo->>Odoo: Run Scheduler (Every 5 Min)
+    Odoo->>Odoo: Run Scheduler (Every midnight) / button to sync manually
     Odoo->>PowerSchool: Call API to Get Student/Parent Data
     PowerSchool-->>Odoo: Send Student/Parent Data (JSON)
     Odoo->>Odoo: Extract Student/Parent Data
