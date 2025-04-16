@@ -50,7 +50,7 @@ sequenceDiagram
     Student->>Admin: Enroll in Course
     Admin->>PowerSchool: Student Registration process
     PowerSchool->>PowerSchool: Prepare Enrollment Fees Data for Sync
-    Odoo->>Odoo: Run Scheduler (Every 5 Min)
+    Odoo->>Odoo: Run Scheduler (Every Midnight) / button to manually sync
     Odoo->>PowerSchool: Call API to Get Enrollment Fees Data
     PowerSchool-->>Odoo: Send Enrollment Fees Data (JSON)
     Odoo->>Odoo: Extract Enrollment Fees Data
