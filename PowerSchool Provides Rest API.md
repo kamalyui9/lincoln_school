@@ -19,15 +19,15 @@ sequenceDiagram
     Odoo-->>Admin: Student/Data Data Successfully Synced
 ```
 
-# 1. Sync Manually Student/Parent Data from PowerSchool to Odoo
+# 1. Sync Manually Student/Parent Data from Odoo to Powerschool
 ```mermaid
 sequenceDiagram
     participant Admin as Admin
     participant PowerSchool as PowerSchool
     participant Odoo as Odoo
 
-    Admin->>PowerSchool: Update Student/Parent Data
-    PowerSchool->>PowerSchool: Prepare Student/Parent Data for Sync
+    Admin->>Odoo: Update Student/Parent Data
+    Odoo->>Odoo: Prepare Student/Parent Data for Sync
     Odoo->>Odoo: Button to sync manually based on Payload and spesific student ID
     Odoo->>PowerSchool: Call API to Get Student/Parent Data based on Payload and spesific student ID
     PowerSchool-->>Odoo: Send Student/Parent Data (JSON) based on student ID
